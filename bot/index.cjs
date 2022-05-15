@@ -81,6 +81,13 @@ async function initWatcher() {
 
 
   setTimeout(function process() {
+    if(!checkAccess(chatID)) {
+      isWatching = false
+      console.log(dateStamp())
+      console.log('⚠️ Access was restricted')
+      console.log('⚠️ Bot is stopped')
+      return
+    }
     updateChatIcon()
     setTimeout(process, getRunCountdown());
   }, getRunCountdown());
@@ -240,15 +247,15 @@ function getTemplate(){
 
 
 
-// Склонение числовых подписей
+// Declination of numeric signatures
 function numDeclension(number) {
-  sign = ['день', 'дня', 'дней']
-let cases = [2, 0, 1, 1, 1, 2];
-return sign[
-  ( number % 100 > 4 && number % 100 < 20 )
-    ? 2
-    : cases [ ( number % 10 < 5 )
-      ? number % 10
-      : 5 ]
-];
+  let sign = ['день', 'дня', 'дней'];
+  let cases = [2, 0, 1, 1, 1, 2];
+  return sign[
+    ( number % 100 > 4 && number % 100 < 20 )
+      ? 2
+      : cases [ ( number % 10 < 5 )
+        ? number % 10
+        : 5 ]
+  ];
 }

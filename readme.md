@@ -1,22 +1,35 @@
 ## ⚠️ Before run
-Rename .env file and add: BOT_ID, BOT_KEY, CHAT_NAME.
+Rename .env file and add: BOT_ID, BOT_KEY, CHAT_NAME.  
 
----
+## 🤖 Bot commands
 
-## Fix git issues warning
+### Bot launch
+The bot must be a **Chat Admin** with the rights: 
+- **Change Group Info**  
+*For update chat icon*
+- **Delete message**  
+*For clean up after bot commands and icon update*  
+
+The bot will then be launched after any event or chat message.
+
+### Update icon by hand
+Send 'up' message to chat for immediately update the chat icon.
+The message will be removed by bot.
+
+## 🧰 Issues 
+### Github issues
 (already have in .env file)
 
-NTBA_FIX_319=true
+NTBA_FIX_319 = true  
 → https://github.com/yagop/node-telegram-bot-api/issues/319
 
-NTBA_FIX_350=true
+NTBA_FIX_350 = true  
 → https://github.com/yagop/node-telegram-bot-api/issues/350
 
----
-## Fix puppeteer-chrome issues on unix machine
+### Fix puppeteer-chrome issues on Unix machine
 Install this library's:
 
-### Ubuntu
+**Ubuntu**  
 https://github.com/puppeteer/puppeteer/issues/1837#issuecomment-757650566
 ```
 sudo apt-get install ca-certificates \
@@ -58,7 +71,7 @@ wget \
 xdg-utils
 ```
 
-### Linux
+**Linux**  
 https://github.com/puppeteer/puppeteer/issues/391#issuecomment-666541972
 ```
 yum install -y alsa-lib.x86_64 \
